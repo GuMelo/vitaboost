@@ -104,6 +104,18 @@ Deploy realizado pela Vercel:
 
 - **Vercel:** https://vitaboost.vercel.app/
 
+
+## Evidências de Performance utilizando LightHouse
+
+- Landing Page - Página inicial (index.html):
+![Página inicial LP](image-4.png)
+
+- Página de Pós-venda - Upsell (pos-venda.html):
+![página pós-vendas](image-3.png)
+
+- Página de Agradecimento (obrigado.html):
+![Obrigado page](image-2.png)
+
 ## 📄 Licença
 
 Projeto fictício para fins de avaliação técnica.
