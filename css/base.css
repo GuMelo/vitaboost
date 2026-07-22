@@ -141,7 +141,6 @@ button { font-family: inherit; cursor: pointer; }
   font-size: var(--fs-600);
   border: none;
   transition: transform var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast) var(--ease-out);
-  white-space: nowrap;
 }
 
 .btn:hover { transform: translateY(-2px); }
@@ -151,6 +150,7 @@ button { font-family: inherit; cursor: pointer; }
   background: linear-gradient(135deg, var(--color-accent-600), var(--color-accent-300));
   color: var(--color-paper-200);
   box-shadow: var(--shadow-cta);
+  text-align: center;
 }
 
 .btn--primary:hover { box-shadow: 0 16px 32px rgba(63, 174, 77, 0.45); }
