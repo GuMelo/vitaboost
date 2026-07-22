@@ -141,7 +141,7 @@
 .product-figure {
   position: relative;
   z-index: 1;
-  width: min(72%, 280px);
+  width: min(55%, 280px);
   filter: drop-shadow(-10px 24px 16px rgba(15, 36, 56, 0.22));
   animation: float 4s ease-in-out infinite;
 }
@@ -301,7 +301,7 @@
   flex-wrap: wrap;
 }
 
-.rating-summary .score { font-family: var(--font-display); font-size: var(--fs-800); color: var(--color-ink-900); }
+.rating-summary .score { font-family: var(--font-display); font-size: var(--fs-800); color: var(--color-paper-200); }
 
 /* ---------- Footer ---------- */
 .site-footer {
