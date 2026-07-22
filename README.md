@@ -108,13 +108,13 @@ Deploy realizado pela Vercel:
 ## Evidências de Performance utilizando LightHouse
 
 - Landing Page - Página inicial (index.html):
-![Página inicial LP](image-4.png)
+![Página inicial LP](assets/lighthouse-01.png)
 
 - Página de Pós-venda - Upsell (pos-venda.html):
-![página pós-vendas](image-3.png)
+![página pós-vendas](assets/lighthouse-03.png)
 
 - Página de Agradecimento (obrigado.html):
-![Obrigado page](image-2.png)
+![Obrigado page](assets/lighthouse-02.png)
 
 ## 📄 Licença
 
