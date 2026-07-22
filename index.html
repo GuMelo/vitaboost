@@ -17,6 +17,9 @@
 <link rel="stylesheet" href="css/components.css">
 <link rel="stylesheet" href="css/pages.css">
 
+<script src="js/components/header.js"></script>
+<script src="js/components/footer.js"></script>
+
 <!-- Open Graph básico (SEO/compartilhamento) -->
 <meta property="og:title" content="VitaBoost+ — Energia Constante e Metabolismo Ativado">
 <meta property="og:description" content="Complexo energético metabólico formulado nos EUA. Garantia de 30 dias.">
@@ -30,26 +33,10 @@
   🔥 Lançamento: 40% OFF hoje + frete grátis para todo o Brasil
 </div>
 
-<header class="site-header">
-  <div class="container">
-    <a href="#hero" class="brand" aria-label="VitaBoost+ — página inicial">
-      <img src="assets/logo.png" alt="Frasco do suplemento VitaBoost+" width="200">
-    </a>
-
-    <nav id="main-nav" class="nav-links" data-nav-menu aria-label="Navegação principal">
-      <a href="#como-funciona">Como funciona</a>
-      <a href="#beneficios">Benefícios</a>
-      <a href="#depoimentos">Depoimentos</a>
-      <a href="#garantia">Garantia</a>
-    </nav>
-
-    <a class="btn btn--primary header-cta" href="pos-venda.html">Comprar agora</a>
-
-    <button class="nav-toggle" type="button" data-nav-toggle aria-controls="main-nav" aria-expanded="false" aria-label="Abrir menu de navegação">
-      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-    </button>
-  </div>
-</header>
+<header class="site-header" id="site-header"></header>
+<script>
+  renderHeader("site-header", { variant: "home", homeHref: "#hero" });
+</script>
 
 <main id="main-content">
 
@@ -135,60 +122,27 @@
       <div class="section-head" data-reveal>
         <span class="eyebrow">No seu dia a dia</span>
         <h2 id="beneficios-title">Feito para os momentos em que a energia falta</h2>
-        <p>Arraste ou use as setas para conhecer os momentos em que o VitaBoost+ faz diferença.</p>
+        <p>Conheça os momentos em que o VitaBoost+ faz diferença.</p>
       </div>
 
       <div class="carousel" data-carousel aria-roledescription="carrossel" aria-label="Benefícios do VitaBoost+" data-reveal>
         <div class="carousel-track-wrap">
           <div class="carousel-track" data-carousel-track>
-
             <div class="carousel-slide" data-carousel-slide>
-              <figure>
-                <svg viewBox="0 0 120 120" aria-hidden="true">
-                  <circle cx="60" cy="60" r="52" fill="#F5F7F8"/>
-                  <circle cx="60" cy="60" r="22" fill="#3FAE4D"/>
-                  <g stroke="#3FAE4D" stroke-width="4" stroke-linecap="round">
-                    <line x1="60" y1="18" x2="60" y2="30"/><line x1="60" y1="90" x2="60" y2="102"/>
-                    <line x1="18" y1="60" x2="30" y2="60"/><line x1="90" y1="60" x2="102" y2="60"/>
-                  </g>
-                </svg>
-                <figcaption>Energia ao acordar, sem pico seguido de queda</figcaption>
-              </figure>
+              <img src="assets/01.png" alt="Benefícios - Energia ao acordar, sem pico seguido de queda" width="500">
             </div>
 
             <div class="carousel-slide" data-carousel-slide>
-              <figure>
-                <svg viewBox="0 0 120 120" aria-hidden="true">
-                  <circle cx="60" cy="60" r="52" fill="#F0F0F0"/>
-                  <circle cx="60" cy="60" r="30" fill="none" stroke="#183153" stroke-width="6"/>
-                  <circle cx="60" cy="60" r="14" fill="#183153"/>
-                </svg>
-                <figcaption>Foco sustentado nas reuniões da tarde</figcaption>
-              </figure>
+              <img src="assets/02.png" alt="Benefícios - Foco sustentado nas reuniões da tarde" width="500">
             </div>
 
             <div class="carousel-slide" data-carousel-slide>
-              <figure>
-                <svg viewBox="0 0 120 120" aria-hidden="true">
-                  <circle cx="60" cy="60" r="52" fill="#F5F7F8"/>
-                  <path d="M60 30 C48 42 42 52 42 62 a18 18 0 0 0 36 0 c0 -10 -6 -20 -18 -32 Z" fill="#3FAE4D"/>
-                </svg>
-                <figcaption>Metabolismo ativo mesmo em rotinas corridas</figcaption>
-              </figure>
+              <img src="assets/03.png" alt="Benefícios - Metabolismo ativo mesmo em rotinas corridas" width="500">
             </div>
 
             <div class="carousel-slide" data-carousel-slide>
-              <figure>
-                <svg viewBox="0 0 120 120" aria-hidden="true">
-                  <circle cx="60" cy="60" r="52" fill="#F0F0F0"/>
-                  <rect x="24" y="54" width="72" height="12" rx="6" fill="#22406B"/>
-                  <rect x="16" y="44" width="14" height="32" rx="5" fill="#183153"/>
-                  <rect x="90" y="44" width="14" height="32" rx="5" fill="#183153"/>
-                </svg>
-                <figcaption>Disposição extra para manter o treino em dia</figcaption>
-              </figure>
+              <img src="assets/04.png" alt="Benefícios - Disposição extra para manter o treino em dia" width="500">
             </div>
-
           </div>
         </div>
 
@@ -279,47 +233,30 @@
 
 </main>
 
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="#hero" class="brand" aria-label="VitaBoost+ — página inicial">
-          <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
-            <circle cx="16" cy="16" r="16" fill="#3FAE4D"/>
-            <path d="M17 6 L9 18 H15 L13 26 L23 12 H16 Z" fill="#183153"/>
-          </svg>
-          VitaBoost+
-        </a>
-        <p>Complexo energético metabólico formulado nos EUA, distribuído no Brasil.</p>
-      </div>
-
-      <div>
-        <h4>Empresa</h4>
-        <ul>
-          <li><a href="#hero">Sobre o produto</a></li>
-          <li><a href="#depoimentos">Depoimentos</a></li>
-          <li><a href="#garantia">Garantia</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h4>Suporte</h4>
-        <ul>
-          <li><a href="#">Perguntas frequentes</a></li>
-          <li><a href="#">Rastrear pedido</a></li>
-          <li><a href="#">Fale conosco</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <span>© <span data-year></span> VitaBoost+. Todos os direitos reservados.</span>
-      <span>Projeto de portfólio — case técnico frontend.</span>
-    </div>
-
-    <p class="footer-disclaimer">Este site é um case técnico fictício desenvolvido para fins de avaliação de portfólio; o produto, a marca e os depoimentos não são reais. Em um cenário real, produtos desta categoria devem informar: "Este produto não é destinado a diagnosticar, tratar, curar ou prevenir doenças. Consulte um profissional de saúde antes de iniciar o uso de qualquer suplemento. Resultados individuais podem variar."</p>
-  </div>
-</footer>
+<footer class="site-footer" id="site-footer"></footer>
+<script>
+  renderFooter("site-footer", {
+    homeHref: "#hero",
+    columns: [
+      {
+        title: "Empresa",
+        links: [
+          { href: "#hero", label: "Sobre o produto" },
+          { href: "#depoimentos", label: "Depoimentos" },
+          { href: "#garantia", label: "Garantia" }
+        ]
+      },
+      {
+        title: "Suporte",
+        links: [
+          { href: "#", label: "Perguntas frequentes" },
+          { href: "#", label: "Rastrear pedido" },
+          { href: "#", label: "Fale conosco" }
+        ]
+      }
+    ],
+  });
+</script>
 
 <div class="sticky-cta" data-sticky-cta>
   <div class="price"><b>VitaBoost+ · 40% OFF</b><span>Frete grátis hoje</span></div>

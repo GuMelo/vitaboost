@@ -1,10 +1,7 @@
 /* ==========================================================================
    VitaBoost+ — Design Tokens
-   Paleta definida pelo cliente: Verde #3FAE4D · Azul-escuro #183153 ·
-   Cinza claro #F5F7F8 · Branco #F0F0F0. Os tons com sufixo -500/-300/-100
-   são apenas variações de luminosidade derivadas dessas 4 cores-base
-   (gradientes, texto de destaque em fundo escuro, fundos suaves) —
-   nenhuma cor fora da paleta foi introduzida.
+   Paleta definida pelo cliente:
+   Verde #3FAE4D · Azul-escuro #183153 · Cinza claro #F5F7F8 · Branco #F0F0F0
    ========================================================================== */
 
 :root {

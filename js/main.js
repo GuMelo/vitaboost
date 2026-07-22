@@ -1,7 +1,6 @@
 /* ==========================================================================
    VitaBoost+ — main.js
    Comportamentos compartilhados entre as 3 páginas do funil.
-   Vanilla JS, sem dependências externas.
    ========================================================================== */
 
 (function () {
@@ -11,12 +10,12 @@
   /* 1. Menu mobile                                                      */
   /* ------------------------------------------------------------------ */
   function initNav() {
-    var toggle = document.querySelector("[data-nav-toggle]");
-    var menu = document.querySelector("[data-nav-menu]");
+    const toggle = document.querySelector("[data-nav-toggle]");
+    const menu = document.querySelector("[data-nav-menu]");
     if (!toggle || !menu) return;
 
     toggle.addEventListener("click", function () {
-      var isOpen = menu.classList.toggle("is-open");
+      const isOpen = menu.classList.toggle("is-open");
       toggle.setAttribute("aria-expanded", String(isOpen));
     });
 
@@ -50,8 +49,8 @@
 
   function renderStars() {
     document.querySelectorAll("[data-stars]").forEach(function (el) {
-      var value = Math.round(Number(el.getAttribute("data-stars")) || 0);
-      var wrap = document.createElement("span");
+      const value = Math.round(Number(el.getAttribute("data-stars")) || 0);
+      const wrap = document.createElement("span");
       wrap.className = "stars";
       wrap.setAttribute("role", "img");
       wrap.setAttribute("aria-label", value + " de 5 estrelas");
@@ -65,8 +64,6 @@
   /* ------------------------------------------------------------------ */
   /* 3. Avatares por iniciais (sem fotos externas)                       */
   /* ------------------------------------------------------------------ */
-  var AVATAR_COLORS = ["#3FAE4D", "#183153", "#58BB63", "#22406B", "#8FD79A"];
-
   function hashString(str) {
     var hash = 0;
     for (var i = 0; i < str.length; i++) {
@@ -86,16 +83,15 @@
   function renderAvatars() {
     document.querySelectorAll("[data-avatar]").forEach(function (el) {
       var name = el.getAttribute("data-avatar");
-      var color = AVATAR_COLORS[hashString(name) % AVATAR_COLORS.length];
       el.classList.add("avatar-initials");
-      el.style.background = color;
+      el.style.background = "#68d477";
       el.textContent = initials(name);
       el.setAttribute("aria-hidden", "true");
     });
   }
 
   /* ------------------------------------------------------------------ */
-  /* 4. Carrossel de imagens (touch + botões + teclado + autoplay)       */
+  /* 4. Carrossel de imagens (botões + autoplay)                        */
   /* ------------------------------------------------------------------ */
   function initCarousel(root) {
     var track = root.querySelector("[data-carousel-track]");
@@ -106,7 +102,7 @@
     if (!track || slides.length === 0) return;
 
     var index = 0;
-    var autoplayMs = 5000;
+    var autoplayMs = 4000;
     var timer = null;
 
     var dots = slides.map(function (_, i) {
@@ -176,7 +172,7 @@
   /* 5. Reveal ao rolar (IntersectionObserver)                           */
   /* ------------------------------------------------------------------ */
   function initReveal() {
-    var items = document.querySelectorAll("[data-reveal]");
+    const items = document.querySelectorAll("[data-reveal]");
     if (!items.length) return;
 
     if (!("IntersectionObserver" in window)) {
@@ -184,7 +180,7 @@
       return;
     }
 
-    var observer = new IntersectionObserver(function (entries) {
+    const observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           entry.target.classList.add("is-visible");
@@ -200,12 +196,12 @@
   /* 6. CTA sticky mobile — aparece após o hero                          */
   /* ------------------------------------------------------------------ */
   function initStickyCta() {
-    var bar = document.querySelector("[data-sticky-cta]");
-    var hero = document.querySelector(".hero, .upsell-hero, .thanks-hero");
+    const bar = document.querySelector("[data-sticky-cta]");
+    const hero = document.querySelector(".hero, .upsell-hero, .thanks-hero");
     if (!bar || !hero) return;
 
-    var thresholdY = hero.offsetTop + hero.offsetHeight;
-    var ticking = false;
+    const thresholdY = hero.offsetTop + hero.offsetHeight;
+    let ticking = false;
 
     function update() {
       bar.classList.toggle("is-visible", window.scrollY > thresholdY);
@@ -226,17 +222,17 @@
   /* 7. Número de pedido (página de agradecimento)                       */
   /* ------------------------------------------------------------------ */
   function initOrderId() {
-    var el = document.querySelector("[data-order-id]");
+    const el = document.querySelector("[data-order-id]");
     if (!el) return;
-    var random = Math.floor(10000 + Math.random() * 89999);
-    el.textContent = "#IGN-" + random;
+    const random = Math.floor(10000 + Math.random() * 89999);
+    el.textContent = "#VITA-" + random;
   }
 
   /* ------------------------------------------------------------------ */
   /* 8. Rodapé — ano atual                                               */
   /* ------------------------------------------------------------------ */
   function initFooterYear() {
-    var el = document.querySelector("[data-year]");
+    const el = document.querySelector("[data-year]");
     if (el) el.textContent = new Date().getFullYear();
   }
 

@@ -182,7 +182,7 @@
   display: grid;
   place-items: center;
   min-height: 340px;
-  padding: var(--space-6);
+  /* padding: var(--space-6); */
   background: linear-gradient(135deg, var(--color-paper-200), var(--color-accent-100));
 }
 
@@ -290,7 +290,7 @@
   flex-shrink: 0;
 }
 
-.testimonial-person .who b { display: block; font-size: var(--fs-400); }
+.testimonial-person .who b { display: block; font-size: var(--fs-400); color: var(--color-text-600); }
 .testimonial-person .who span { font-size: var(--fs-300); color: var(--color-text-600); }
 
 .rating-summary {
@@ -340,6 +340,7 @@
   padding-top: var(--space-4);
   font-size: var(--fs-300);
 }
+.footer-bottom a:hover { color: var(--color-accent-300); }
 
 .footer-disclaimer {
   font-size: var(--fs-300);
@@ -366,6 +367,7 @@
   font-weight: 700;
   padding: 6px 12px;
   border-radius: var(--radius-pill);
+  margin-left: auto;
 }
 
 /* ---------- Ícones inline ---------- */

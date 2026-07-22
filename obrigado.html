@@ -17,22 +17,18 @@
 <link rel="stylesheet" href="css/base.css">
 <link rel="stylesheet" href="css/components.css">
 <link rel="stylesheet" href="css/pages.css">
+
+<script src="js/components/header.js"></script>
+<script src="js/components/footer.js"></script>
 </head>
 <body>
 
 <a class="skip-link" href="#main-content">Pular para o conteúdo principal</a>
 
-<header class="site-header">
-  <div class="container" style="justify-content:flex-start; gap:var(--space-3);">
-    <a href="index.html" class="brand" aria-label="VitaBoost+ — página inicial">
-      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
-        <circle cx="16" cy="16" r="16" fill="#3FAE4D"/>
-        <path d="M17 6 L9 18 H15 L13 26 L23 12 H16 Z" fill="#183153"/>
-      </svg>
-      VitaBoost+
-    </a>
-  </div>
-</header>
+<header class="site-header" id="site-header"></header>
+<script>
+  renderHeader("site-header", { variant: "simple", homeHref: "index.html", gap: "space-3" });
+</script>
 
 <main id="main-content">
 
@@ -53,7 +49,8 @@
       <h2 id="resumo-title" class="visually-hidden">Resumo do pedido</h2>
 
       <div class="order-summary" data-reveal>
-        <svg class="product-figure" viewBox="0 0 200 320" aria-hidden="true">
+        <img src="assets/hero-bottle.png" alt="Frasco VitaBoost+" width="80" style="margin:0 var(--space-3);">
+        <!-- <svg class="product-figure" viewBox="0 0 200 320" aria-hidden="true">
           <defs>
             <linearGradient id="bottleGradThanks" x1="0" y1="0" x2="0" y2="1">
               <stop offset="0" stop-color="#58BB63"/>
@@ -64,7 +61,7 @@
           <rect x="60" y="36" width="80" height="20" rx="6" fill="#22406B"/>
           <rect x="18" y="56" width="164" height="248" rx="30" fill="url(#bottleGradThanks)"/>
           <rect x="38" y="106" width="124" height="148" rx="14" fill="#F0F0F0"/>
-        </svg>
+        </svg> -->
         <div class="details">
           <b>VitaBoost+ — Energia + Metabolismo</b>
           <span>60 cápsulas · suplemento alimentar</span>
@@ -121,40 +118,27 @@
 
 </main>
 
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="index.html" class="brand" aria-label="VitaBoost+ — página inicial">
-          <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
-            <circle cx="16" cy="16" r="16" fill="#3FAE4D"/>
-            <path d="M17 6 L9 18 H15 L13 26 L23 12 H16 Z" fill="#183153"/>
-          </svg>
-          VitaBoost+
-        </a>
-        <p>Complexo energético metabólico formulado nos EUA, distribuído no Brasil.</p>
-      </div>
-      <div>
-        <h4>Empresa</h4>
-        <ul>
-          <li><a href="index.html">Página inicial</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Suporte</h4>
-        <ul>
-          <li><a href="#">Perguntas frequentes</a></li>
-          <li><a href="#">Fale conosco</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© <span data-year></span> VitaBoost+. Todos os direitos reservados.</span>
-      <span>Projeto de portfólio — case técnico frontend.</span>
-    </div>
-    <p class="footer-disclaimer">Este site é um case técnico fictício desenvolvido para fins de avaliação de portfólio; o produto, a marca e os dados de pedido não são reais.</p>
-  </div>
-</footer>
+<footer class="site-footer" id="site-footer"></footer>
+<script>
+  renderFooter("site-footer", {
+    homeHref: "index.html",
+    columns: [
+      {
+        title: "Empresa",
+        links: [
+          { href: "index.html", label: "Página inicial" }
+        ]
+      },
+      {
+        title: "Suporte",
+        links: [
+          { href: "#", label: "Perguntas frequentes" },
+          { href: "#", label: "Fale conosco" }
+        ]
+      }
+    ],
+  });
+</script>
 
 <script src="js/main.js" defer></script>
 </body>

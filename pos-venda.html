@@ -17,26 +17,23 @@
 <link rel="stylesheet" href="css/base.css">
 <link rel="stylesheet" href="css/components.css">
 <link rel="stylesheet" href="css/pages.css">
+
+<script src="js/components/header.js"></script>
+<script src="js/components/footer.js"></script>
 </head>
 <body>
 
 <a class="skip-link" href="#main-content">Pular para o conteúdo principal</a>
 
-<header class="site-header">
-  <div class="container" style="justify-content:flex-start; gap:var(--space-4);">
-    <a href="index.html" class="brand" aria-label="VitaBoost+ — página inicial">
-      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
-        <circle cx="16" cy="16" r="16" fill="#3FAE4D"/>
-        <path d="M17 6 L9 18 H15 L13 26 L23 12 H16 Z" fill="#183153"/>
-      </svg>
-      VitaBoost+
-    </a>
-    <span class="badge" style="margin-left:auto;">
-      <svg class="icon" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12 L10 18 L20 6" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Pedido do VitaBoost+ confirmado
-    </span>
-  </div>
-</header>
+<header class="site-header" id="site-header"></header>
+<script>
+  renderHeader("site-header", {
+    variant: "simple",
+    homeHref: "index.html",
+    gap: "space-4",
+    badge: "Pedido do VitaBoost+ confirmado"
+  });
+</script>
 
 <main id="main-content">
 
@@ -49,19 +46,17 @@
 
       <div class="video-wrap">
         <div class="video-frame-16x9">
-          <!--
-            Placeholder de demonstração: trailer "Big Buck Bunny" (Blender Foundation, CC BY 3.0),
-            usado apenas para validar a mecânica de player + JS. Em produção, substituir o src
-            pelo vídeo real hospedado em Vturb, Vidalytics, YouTube ou Vimeo.
-          -->
           <iframe
             id="offer-video"
-            src="https://www.youtube.com/embed/aqz-KE-bpKQ?enablejsapi=1&rel=0&modestbranding=1&playsinline=1"
-            title="Vídeo da oferta complementar VitaBoost+"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/BJExdhyLZVU?si=4f6RYAnfPTnLWudN" 
+            title="YouTube video VitaBoost+"
+            frameborder="0"
+            allow="autoplay;"
             allowfullscreen
-            loading="lazy">
-          </iframe>
+            loading="lazy"
+          ></iframe>
         </div>
       </div>
 
@@ -146,39 +141,27 @@
 
 </main>
 
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="index.html" class="brand" aria-label="VitaBoost+ — página inicial">
-          <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
-            <circle cx="16" cy="16" r="16" fill="#3FAE4D"/>
-            <path d="M17 6 L9 18 H15 L13 26 L23 12 H16 Z" fill="#183153"/>
-          </svg>
-          VitaBoost+
-        </a>
-        <p>Complexo energético metabólico formulado nos EUA, distribuído no Brasil.</p>
-      </div>
-      <div>
-        <h4>Suporte</h4>
-        <ul>
-          <li><a href="#">Perguntas frequentes</a></li>
-          <li><a href="#">Fale conosco</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Pedido</h4>
-        <ul>
-          <li><a href="obrigado.html">Continuar sem a oferta</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© <span data-year></span> VitaBoost+. Todos os direitos reservados.</span>
-      <span>Projeto de portfólio — case técnico frontend.</span>
-    </div>
-  </div>
-</footer>
+<footer class="site-footer" id="site-footer"></footer>
+<script>
+  renderFooter("site-footer", {
+    homeHref: "index.html",
+    columns: [
+      {
+        title: "Suporte",
+        links: [
+          { href: "#", label: "Perguntas frequentes" },
+          { href: "#", label: "Fale conosco" }
+        ]
+      },
+      {
+        title: "Pedido",
+        links: [
+          { href: "obrigado.html", label: "Continuar sem a oferta" }
+        ]
+      }
+    ]
+  });
+</script>
 
 <script src="js/main.js" defer></script>
 <script src="js/upsell.js" defer></script>
