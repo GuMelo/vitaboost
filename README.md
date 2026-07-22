@@ -11,8 +11,8 @@ resposta direta.
 
 ## 🔗 Links
 
-- **Projeto publicado:** _[adicionar link do deploy aqui]_
-- **Repositório:** _[adicionar link do GitHub aqui]_
+- **Projeto publicado:** _https://vitaboost.vercel.app/_
+- **Repositório:** _https://github.com/GuMelo/vitaboost_
 
 ## 🧱 Stack
 
@@ -25,19 +25,25 @@ resposta direta.
 
 ```
 vitaboost/
-├── index.html          # 1. Landing Page
-├── pos-venda.html       # 2. Página Pós-Venda / Upsell
-├── obrigado.html        # 3. Página de Agradecimento
+├── index.html            # 1. Landing Page
+├── pos-venda.html        # 2. Página Pós-Venda / Upsell
+├── obrigado.html         # 3. Página de Agradecimento
 ├── css/
-│   ├── variables.css    # design tokens (cor, tipografia, espaçamento)
-│   ├── base.css         # reset + tipografia + utilitários
-│   ├── components.css   # header, footer, carrossel, depoimentos, garantia...
-│   └── pages.css        # estilos específicos de cada página
+│   ├── variables.css     # design tokens (cor, tipografia, espaçamento)
+│   ├── base.css          # reset + tipografia + utilitários
+│   ├── components.css    # header, footer, carrossel, depoimentos, garantia...
+│   └── pages.css         # estilos específicos de cada página
 ├── js/
+│   ├── components/
+│   │   ├── footer.js     # componente de footer para padrão de todas as páginas
+│   │   └── header.js     # componente de header para padrão de todas as páginas com variantes
 │   ├── main.js           # nav mobile, carrossel, estrelas, avatares, scroll reveal
 │   └── upsell.js         # lógica de revelação de conteúdo após o vídeo (só na pág. 2)
 └── assets/
-    └── favicon.svg
+    ├── favicon.png
+    ├── hero-bottle.png
+    ├── logo.png
+    └── ...
 ```
 
 CSS e JS foram divididos por responsabilidade (tokens / base / componentes /
@@ -64,8 +70,7 @@ vídeo (ou aguarde/clique em "pular") → clique em **qualquer CTA da oferta**
 
 ## 🎨 Decisões de design
 
-- **Conceito:** identidade construída sobre a paleta de marca fornecida pelo
-  cliente — seções claras (cinza claro/branco) intercaladas com faixas
+- **Conceito:** seções claras (cinza claro/branco) intercaladas com faixas
   escuras de autoridade (azul-escuro), com o verde como único acento (CTA,
   garantia, estrelas, ícones de destaque).
 - **Paleta (definida pelo cliente):** verde `#3FAE4D`, azul-escuro `#183153`,
@@ -75,30 +80,11 @@ vídeo (ou aguarde/clique em "pular") → clique em **qualquer CTA da oferta**
   fora da paleta foi usada.
 - **Tipografia:** Space Grotesk (display) + Inter (corpo).
 - **Sem fotos de banco de imagens hotlinkadas:** todo o visual (frasco do
-  produto, ícones, selos, avatares dos depoimentos) foi feito em SVG/CSS.
+  produto, ícones, selos, avatares dos depoimentos) foi criado com auxílio de IA.
   Decisão técnica deliberada para: (1) performance — zero requisições
   externas de imagem, melhor LCP em mobile; (2) zero risco de link quebrado
   ou direitos de imagem de terceiros; (3) consistência visual perfeita com a
   paleta da marca.
-- **Avatares dos depoimentos:** gerados via JS a partir das iniciais do nome
-  (manipulação de DOM real, sem placeholder de foto de pessoa real).
-
-## 🎥 Sobre o vídeo da página de Pós-Venda
-
-O `<iframe>` usa como placeholder o trailer "Big Buck Bunny" (Blender
-Foundation, licença CC BY 3.0) só para validar a mecânica de player + JS.
-Em um cenário real, basta trocar o `src` do iframe pelo vídeo hospedado em
-Vturb, Vidalytics, YouTube ou Vimeo — a lógica de revelação de conteúdo em
-`js/upsell.js` já funciona com qualquer embed do YouTube (via YouTube IFrame
-API) e tem fallback por tempo para não depender só do evento `ended`.
-
-**Regra implementada:** o conteúdo (`#reveal-content`) é revelado quando o
-vídeo termina (`onStateChange` → `ENDED`) **ou** após um tempo máximo de
-segurança (`FALLBACK_MS`, 40s), o que vier primeiro. Existe também um botão
-"pular" liberado após 15s, para não travar o usuário caso o autoplay do
-navegador bloqueie o player. Antes de revelar, o container fica com o
-atributo `inert` (além de `aria-hidden`), para que links escondidos não
-recebam foco de teclado nem sejam lidos por leitor de tela.
 
 ## ✅ Diferenciais implementados
 
@@ -112,34 +98,11 @@ recebam foco de teclado nem sejam lidos por leitor de tela.
 - `loading="lazy"` no iframe do vídeo.
 - Código modularizado (tokens/base/componentes/páginas).
 
-## 📊 Performance (Lighthouse / PageSpeed Insights)
-
-O relatório de performance depende da URL publicada, então ele deve ser
-gerado **depois do deploy**. Passo a passo:
-
-1. Publique o projeto (veja seção abaixo).
-2. Rode o relatório de uma das formas:
-   - **PageSpeed Insights:** acesse https://pagespeed.web.dev, cole a URL
-     publicada e rode para Mobile e Desktop.
-   - **Lighthouse no Chrome DevTools:** abra a URL publicada → `F12` →
-     aba **Lighthouse** → categoria *Performance* (mobile) → **Analyze page load**.
-3. Tire um screenshot do resultado e adicione neste README (ou cole o link
-   compartilhável gerado pelo PageSpeed Insights), conforme pedido no
-   desafio:
-
-   ```md
-   ![Lighthouse Mobile](./docs/lighthouse-mobile.png)
-   ```
-
-_(placeholder — substituir pela evidência real após o deploy)_
-
 ## 🚀 Deploy
 
-Qualquer uma destas opções funciona (projeto 100% estático):
+Deploy realizado pela Vercel:
 
-- **Netlify:** arraste a pasta do projeto em https://app.netlify.com/drop
-- **Vercel:** `npx vercel` na pasta do projeto
-- **GitHub Pages:** Settings → Pages → Deploy from branch → `main` / `/ (root)`
+- **Vercel:** https://vitaboost.vercel.app/
 
 ## 📄 Licença
 
