@@ -186,12 +186,8 @@
   background: linear-gradient(135deg, var(--color-paper-200), var(--color-accent-100));
 }
 
-.carousel-slide figure { width: min(60%, 220px); }
-.carousel-slide figcaption {
-  margin-top: var(--space-3);
-  text-align: center;
-  font-weight: 600;
-  color: var(--color-ink-900);
+.carousel-slide img {
+    border-radius: 12px;
 }
 
 .carousel-controls {
