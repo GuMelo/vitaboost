@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oferta exclusiva pós-compra | VitaBoost+</title>
+<meta name="description" content="Assista ao vídeo rápido e conheça a oferta exclusiva de complemento para quem já garantiu o VitaBoost+.">
+<meta name="theme-color" content="#183153">
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/favicon.png" type="image/png+xml">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">Pular para o conteúdo principal</a>
+
+<header class="site-header">
+  <div class="container" style="justify-content:flex-start; gap:var(--space-4);">
+    <a href="index.html" class="brand" aria-label="VitaBoost+ — página inicial">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+        <circle cx="16" cy="16" r="16" fill="#3FAE4D"/>
+        <path d="M17 6 L9 18 H15 L13 26 L23 12 H16 Z" fill="#183153"/>
+      </svg>
+      VitaBoost+
+    </a>
+    <span class="badge" style="margin-left:auto;">
+      <svg class="icon" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12 L10 18 L20 6" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Pedido do VitaBoost+ confirmado
+    </span>
+  </div>
+</header>
+
+<main id="main-content">
+
+  <!-- VÍDEO / PITCH COMPLEMENTAR -->
+  <section class="upsell-hero">
+    <div class="container">
+      <span class="eyebrow">Antes de finalizar</span>
+      <h1>Espera! Existe um complemento que potencializa os seus resultados</h1>
+      <p class="lede">Assista ao vídeo de 1 minuto abaixo — o restante desta oferta exclusiva libera automaticamente ao final.</p>
+
+      <div class="video-wrap">
+        <div class="video-frame-16x9">
+          <!--
+            Placeholder de demonstração: trailer "Big Buck Bunny" (Blender Foundation, CC BY 3.0),
+            usado apenas para validar a mecânica de player + JS. Em produção, substituir o src
+            pelo vídeo real hospedado em Vturb, Vidalytics, YouTube ou Vimeo.
+          -->
+          <iframe
+            id="offer-video"
+            src="https://www.youtube.com/embed/aqz-KE-bpKQ?enablejsapi=1&rel=0&modestbranding=1&playsinline=1"
+            title="Vídeo da oferta complementar VitaBoost+"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+
+      <p class="video-hint" data-video-hint>
+        <span class="dot" aria-hidden="true"></span>
+        A oferta libera automaticamente ao fim do vídeo
+      </p>
+      <p style="margin-top:var(--space-3);">
+        <button class="btn btn--ghost" type="button" data-skip-link disabled>Aguarde alguns segundos…</button>
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTEÚDO REVELADO DINAMICAMENTE APÓS O VÍDEO -->
+  <div id="reveal-content" inert aria-hidden="true">
+    <section class="section" aria-labelledby="oferta-title">
+      <div class="container text-center">
+        <span class="reveal-flag">
+          <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12 L10 18 L20 6" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Oferta liberada só para quem chegou até aqui
+        </span>
+        <h2 id="oferta-title">Leve também o Kit Foco Total com 30% OFF</h2>
+        <p class="microcopy" style="max-width:52ch;margin-inline:auto;">Formulado para complementar o VitaBoost+ nos dias de maior demanda mental — pode ser enviado junto no mesmo pacote.</p>
+
+        <div class="offer-card" style="margin-top:var(--space-5);">
+          <span class="badge">Somente nesta página</span>
+          <div class="price-tag">
+            <span class="price-old">R$ 197</span>
+            <span class="price-new">R$ 137</span>
+          </div>
+          <ul class="offer-bullets">
+            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12 L10 18 L20 6" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg> 1 frasco do Kit Foco Total (30 doses)</li>
+            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12 L10 18 L20 6" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg> Envio junto com o pedido do VitaBoost+, sem custo extra de frete</li>
+            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12 L10 18 L20 6" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg> Mesma garantia incondicional de 30 dias</li>
+          </ul>
+          <div class="btn-row" style="justify-content:center;">
+            <a class="btn btn--primary btn--block" href="obrigado.html">Sim, quero adicionar ao meu pedido</a>
+          </div>
+          <p class="microcopy"><a href="obrigado.html">Não, obrigado — continuar sem a oferta</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="garantia" aria-labelledby="garantia-upsell-title">
+      <div class="container">
+        <div class="guarantee-card">
+          <svg class="guarantee-seal" viewBox="0 0 96 96" role="img" aria-label="Selo de garantia">
+            <path d="M48 6 L84 20 V46 C84 68 68 84 48 90 C28 84 12 68 12 46 V20 Z" fill="#3FAE4D"/>
+            <path d="M32 48 L44 60 L66 36" fill="none" stroke="#F0F0F0" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div>
+            <h3 id="garantia-upsell-title">A mesma garantia de 30 dias cobre esta oferta</h3>
+            <p>Se o Kit Foco Total não fizer sentido pra sua rotina, devolvemos o valor deste item também — sem burocracia.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--dark" aria-labelledby="info-adicional-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Antes de continuar</span>
+          <h2 id="info-adicional-title">Informações adicionais desta oferta</h2>
+        </div>
+        <div class="science-grid">
+          <div class="science-card">
+            <h3>Envio combinado</h3>
+            <p>Se você adicionar o Kit Foco Total, ele sai no mesmo pacote do VitaBoost+ — sem taxa extra de envio.</p>
+          </div>
+          <div class="science-card">
+            <h3>Prazo de entrega</h3>
+            <p>Sem alteração no prazo já informado na etapa anterior, independente da escolha nesta página.</p>
+          </div>
+          <div class="science-card">
+            <h3>Disponibilidade</h3>
+            <p>Esta condição de preço é exibida apenas uma vez, nesta etapa do pedido.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand" aria-label="VitaBoost+ — página inicial">
+          <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+            <circle cx="16" cy="16" r="16" fill="#3FAE4D"/>
+            <path d="M17 6 L9 18 H15 L13 26 L23 12 H16 Z" fill="#183153"/>
+          </svg>
+          VitaBoost+
+        </a>
+        <p>Complexo energético metabólico formulado nos EUA, distribuído no Brasil.</p>
+      </div>
+      <div>
+        <h4>Suporte</h4>
+        <ul>
+          <li><a href="#">Perguntas frequentes</a></li>
+          <li><a href="#">Fale conosco</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Pedido</h4>
+        <ul>
+          <li><a href="obrigado.html">Continuar sem a oferta</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year></span> VitaBoost+. Todos os direitos reservados.</span>
+      <span>Projeto de portfólio — case técnico frontend.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+<script src="js/upsell.js" defer></script>
+</body>
+</html>
